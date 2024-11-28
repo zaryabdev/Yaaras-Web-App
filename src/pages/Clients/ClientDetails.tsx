@@ -5,7 +5,12 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-import { EllipsisVerticalIcon, UserIcon } from "@heroicons/react/20/solid";
+import {
+  DocumentCheckIcon,
+  EllipsisVerticalIcon,
+  DocumentIcon,
+  UserIcon,
+} from "@heroicons/react/20/solid";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
@@ -21,6 +26,7 @@ const documents = [
     name: "Document 1",
     href: "#",
     status: "Complete",
+    icon: DocumentCheckIcon,
     createdBy: "Leslie Alexander",
     dueDate: "March 17, 2023",
     dueDateTime: "2023-03-17T00:00Z",
@@ -32,6 +38,7 @@ const documents = [
     status: "In progress",
     createdBy: "Leslie Alexander",
     dueDate: "May 5, 2023",
+    icon: DocumentIcon,
     dueDateTime: "2023-05-05T00:00Z",
   },
   {
@@ -40,6 +47,7 @@ const documents = [
     href: "#",
     status: "In progress",
     createdBy: "Courtney Henry",
+    icon: DocumentIcon,
     dueDate: "May 25, 2023",
     dueDateTime: "2023-05-25T00:00Z",
   },
@@ -49,6 +57,7 @@ const documents = [
     href: "#",
     status: "In progress",
     createdBy: "Courtney Henry",
+    icon: DocumentIcon,
     dueDate: "May 25, 2023",
     dueDateTime: "2023-05-25T00:00Z",
   },
@@ -58,6 +67,7 @@ const documents = [
     href: "#",
     status: "In progress",
     createdBy: "Courtney Henry",
+    icon: DocumentIcon,
     dueDate: "May 25, 2023",
     dueDateTime: "2023-05-25T00:00Z",
   },
@@ -66,6 +76,7 @@ const documents = [
     name: "Document 1",
     href: "#",
     status: "Complete",
+    icon: DocumentCheckIcon,
     createdBy: "Leslie Alexander",
     dueDate: "March 17, 2023",
     dueDateTime: "2023-03-17T00:00Z",
@@ -75,6 +86,7 @@ const documents = [
     name: "Document 1",
     href: "#",
     status: "Complete",
+    icon: DocumentCheckIcon,
     createdBy: "Leslie Alexander",
     dueDate: "March 17, 2023",
     dueDateTime: "2023-03-17T00:00Z",
@@ -84,6 +96,7 @@ const documents = [
     name: "Document 1",
     href: "#",
     status: "Complete",
+    icon: DocumentCheckIcon,
     createdBy: "Leslie Alexander",
     dueDate: "March 17, 2023",
     dueDateTime: "2023-03-17T00:00Z",
@@ -135,7 +148,11 @@ const ClientDetails = () => {
             className="flex items-center justify-between gap-x-6 py-5"
           >
             <div className="min-w-0">
-              <div className="flex items-start gap-x-3">
+              <div className="flex items-center  gap-x-2">
+                <project.icon
+                  className="h-4 w-4 text-gray-400 shrink-0"
+                  aria-hidden="true"
+                />
                 <p className="text-sm font-semibold leading-6 text-gray-900">
                   {project.name}
                 </p>
