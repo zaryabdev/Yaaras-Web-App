@@ -1,4 +1,4 @@
-// import ClientDetails from './ClientDetails'
+import ClientDetails from "./ClientDetails";
 import ClientListing from "./ClientListing";
 
 const Clients = () => {
@@ -8,7 +8,7 @@ const Clients = () => {
         <ClientListing />
       </div>
       <div className="flex flex-col flex-1 flex-shrink min-w-0 overflow-y-scroll">
-        {/* <ClientDetails /> */}
+        <ClientDetails />
       </div>
     </div>
   );

@@ -22,16 +22,33 @@ const ClientListing = () => {
 
   return (
     <>
-      <div className="p-2">
+      <div className="p-2 bg-gray-200">
         <button
           type="button"
-          className="inline-flex items-center gap-x-1.5 rounded-md bg-gray-600 w-full px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+          className="inline-flex items-center gap-x-1.5 rounded-md bg-gray-700 w-full px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
           onClick={() => setOpen((prev) => !prev)}
         >
           <UserIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
           Add Client
         </button>
-        <form className="relative mt-4 flex flex-1" action="#" method="GET">
+        <div>
+          <div className="relative mt-2 rounded-md shadow-sm">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <MagnifyingGlassIcon
+                aria-hidden="true"
+                className="h-5 w-5 text-gray-400"
+              />
+            </div>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Search Clients"
+              className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        {/* <form className="relative mt-4 flex flex-1" action="#" method="GET">
           <label htmlFor="search-field" className="sr-only">
             Search Clients
           </label>
@@ -41,12 +58,12 @@ const ClientListing = () => {
           />
           <input
             id="search-field"
-            className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+            className="block h-full w-full border border-gray-200 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
             placeholder="Search Clients..."
             type="search"
             name="search"
           />
-        </form>
+        </form> */}
       </div>
       <nav className="relative h-full overflow-y-auto" aria-label="Directory">
         {Object.keys(clientDirectory).map((letter) => (
@@ -56,12 +73,16 @@ const ClientListing = () => {
             </div>
             <ul role="list" className="divide-y divide-gray-100">
               {clientDirectory[letter].map((person) => (
-                <li key={person.email} className="flex gap-x-4 px-3 py-5">
-                  <img
+                <li
+                  key={person.email}
+                  className="flex gap-x-4 px-3 py-5 cursor-pointer"
+                >
+                  {/* <img
                     className="h-12 w-12 flex-none rounded-full bg-gray-50"
                     src={person.imageUrl}
                     alt=""
-                  />
+                  /> */}
+                  <UserIcon className="h-12 w-12 rounded-full text-gray-300" />
                   <div className="min-w-0">
                     <p className="text-sm font-semibold leading-6 text-gray-900">
                       {person.name}
@@ -189,7 +210,7 @@ const ClientListing = () => {
                   </button>
                   <button
                     type="button"
-                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                     onClick={() => setOpen(false)}
                   >
                     Send Invite
